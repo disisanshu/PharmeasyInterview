@@ -9,6 +9,9 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Data manager class for patients
+ */
 @Data
 public class PatientManager {
 
@@ -22,6 +25,10 @@ public class PatientManager {
         patientMap = new HashMap<>();
     }
 
+    /**
+     * To get the Singleton instance
+     * @return
+     */
     public static PatientManager getInstance() {
         if (instance == null) {
             synchronized (PatientManager.class) {
@@ -33,6 +40,9 @@ public class PatientManager {
         return instance;
     }
 
+    /**
+     * To view all the patients
+     */
     public void viewPatients() {
         if (patientMap == null || patientMap.isEmpty()) {
             System.out.println("No patient present!");
@@ -44,6 +54,10 @@ public class PatientManager {
         System.out.println();
     }
 
+    /**
+     * Add a patient to the data set
+     * @param doctor
+     */
     public void addPatient(Patient patient) {
         if (patientMap == null || patientMap.isEmpty()) {
             patientMap = new HashMap<>();

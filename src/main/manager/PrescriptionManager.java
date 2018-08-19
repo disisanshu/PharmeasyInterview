@@ -10,6 +10,9 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Data manager class for prescritions
+ */
 @Data
 public class PrescriptionManager {
 
@@ -34,24 +37,22 @@ public class PrescriptionManager {
         return instance;
     }
 
-    public void viewPrescriptions() {
-        if (prescriptionMap == null || prescriptionMap.isEmpty()) {
-            System.out.println("No prescriptions present!");
+    /**
+     * To view prescription if the requestor is Authorized
+     */
+    public void viewPrescription(Integer prescriptionId, User requester) {
+        if (!prescriptionMap.containsKey(prescriptionId) ||
+                !prescriptionMap.get(prescriptionId).getPermittedUsers().contains(requester.getUserId())) {
+            System.out.println("User doesn't have permission to view the report!");
             return;
         }
-        for (Map.Entry<Integer, Prescription> entry : prescriptionMap.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue().toString());
-        }
-        System.out.println();
+        System.out.println("Prescription: " + prescriptionMap.get(prescriptionId).getMedicalReportId());
     }
 
-    public void viewPrescription(Integer prescriptionId, User requester) {
-        if (!prescriptionMap.get(prescriptionId).getPermittedUsers().contains(requester.getUserId())) {
-            System.out.println("User doesn't have permission to view the report!");
-        }
-        System.out.println("Prescription: " + prescriptionMap.get(prescriptionId).getMedicalReportId());//.toString());
-    }
-
+    /**
+     * Add a prescription to the data set
+     * @param doctor
+     */
     public Prescription addPrescription(Prescription prescription) {
         if (prescriptionMap == null || prescriptionMap.isEmpty()) {
             prescriptionMap = new HashMap<>();

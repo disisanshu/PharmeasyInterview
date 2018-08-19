@@ -88,5 +88,5 @@ The Application is initialized with sample data containing 10 Patients, 5 Doctor
 
 Download Lombok from `https://projectlombok.org/download` and save it to your Downloads folder
 
-****javac -cp ~/Downloads/lombok.jar model/*.java manager/*.java && javac -cp . App.java && java App**
+****javac -cp ~/Downloads/lombok.jar model/\*.java manager/\*.java && javac -cp . App.java && java App**
 

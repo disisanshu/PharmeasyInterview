@@ -9,6 +9,9 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Data manager class for pharmacist
+ */
 @Data
 public class PharmacistManager {
 
@@ -23,6 +26,10 @@ public class PharmacistManager {
         pharmacistMap = new HashMap<>();
     }
 
+    /**
+     * To get the Singleton instance
+     * @return
+     */
     public static PharmacistManager getInstance() {
         if (instance == null) {
             synchronized (PatientManager.class) {
@@ -34,6 +41,9 @@ public class PharmacistManager {
         return instance;
     }
 
+    /**
+     * To view all the pharmacists
+     */
     public void viewPharmacists() {
         if (pharmacistMap == null || pharmacistMap.isEmpty()) {
             System.out.println("No pharmacist present!");
@@ -45,6 +55,10 @@ public class PharmacistManager {
         System.out.println();
     }
 
+    /**
+     * Add a pharmacist to the data set
+     * @param doctor
+     */
     public void addPharmacist(Pharmacist pharmacist) {
         if (pharmacistMap == null || pharmacistMap.isEmpty()) {
             pharmacistMap = new HashMap<>();

@@ -8,6 +8,9 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Data manager class for permission requests
+ */
 public class PermissionRequestManager {
 
     private static PermissionRequestManager instance = null;
@@ -23,6 +26,10 @@ public class PermissionRequestManager {
         permissionRequestMap = new HashMap<>();
     }
 
+    /**
+     * To get the Singleton instance
+     * @return
+     */
     public static PermissionRequestManager getInstance() {
         if (instance == null) {
             synchronized (PermissionRequestManager.class) {
@@ -34,6 +41,9 @@ public class PermissionRequestManager {
         return instance;
     }
 
+    /**
+     * To view all the permission requests
+     */
     public static void viewPermissionRequests() {
         if (permissionRequestMap == null || permissionRequestMap.isEmpty()) {
             System.out.println("No permission request present!");
@@ -45,6 +55,10 @@ public class PermissionRequestManager {
         System.out.println();
     }
 
+    /**
+     * Add a permission request to the data set
+     * @param doctor
+     */
     public PermissionRequest addPermissionRequest(PermissionRequest permissionRequest) {
         if (permissionRequestMap == null || permissionRequestMap.isEmpty()) {
             permissionRequestMap = new HashMap<>();

@@ -142,12 +142,16 @@ public class App {
 
     private static void processPermissionRequest(Integer permissionRequestId, Integer patientId,
                                                  PermissionStatus status, MedicalReport medicalReport) {
+        if (medicalReport == null) {
+            System.out.println("Invalid request!");
+            return;
+        }
         patientManager.changePermissionRequest(permissionRequestId, patientId, status, medicalReport);
     }
 
     private static PermissionRequest raisePermissionRequest(User requester, Patient patient, MedicalReport medicalReport) {
-        if (medicalReport == null) {
-            System.out.println("Invalid medical report!");
+        if (medicalReport == null || patient == null || requester == null) {
+            System.out.println("Invalid request!");
             return null;
         }
         if (!patient.getMedicalReportMap().containsKey(medicalReport.getMedicalReportId())) {

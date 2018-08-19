@@ -10,6 +10,9 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Data manager class for lab reports
+ */
 @Data
 public class LabReportManager {
 
@@ -23,6 +26,10 @@ public class LabReportManager {
         labReportMap = new HashMap<>();
     }
 
+    /**
+     * To get the Singleton instance
+     * @return
+     */
     public static LabReportManager getInstance() {
         if (instance == null) {
             synchronized (LabReportManager.class) {
@@ -34,24 +41,22 @@ public class LabReportManager {
         return instance;
     }
 
-    public void viewLabReports() {
-        if (labReportMap == null || labReportMap.isEmpty()) {
-            System.out.println("No prescriptions present!");
-            return;
-        }
-        for (Map.Entry<Integer, LabReport> entry : labReportMap.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue().toString());
-        }
-        System.out.println();
-    }
-
+    /**
+     * To view lab reports if the requestor is Authorized
+     */
     public void viewLabReport(Integer labReportId, User requester) {
-        if (!labReportMap.get(labReportId).getPermittedUsers().contains(requester.getUserId())) {
+        if (!labReportMap.containsKey(labReportId) ||
+                !labReportMap.get(labReportId).getPermittedUsers().contains(requester.getUserId())) {
             System.out.println("User doesn't have permission to view the report!");
+            return;
         }
         System.out.println(labReportMap.get(labReportId).toString());
     }
 
+    /**
+     * Add a lab report to the data set
+     * @param doctor
+     */
     public LabReport addLabReport(LabReport labReport) {
         if (labReportMap == null || labReportMap.isEmpty()) {
             labReportMap = new HashMap<>();

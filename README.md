@@ -45,7 +45,7 @@ Other data models:
 * Address
 * Medicine
 * Unit
-* Permission Request
+* PermissionRequest
 
 * UserType
 * MedicalReportType

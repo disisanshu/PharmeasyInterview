@@ -12,10 +12,11 @@ The App is maintaining data in memory.
 Data Models are shared below:
 
 _**Interfaces**_
-
+```
 * User
 * MedicalReport
 * Business
+```
 
 Classes implemented on **_User_**
 ```

@@ -84,7 +84,7 @@ to avoid the need of communication between managers. These decisions were taken 
 
 #### Limitations & shortcomings
 
-* Concurrency is not handled as it wasn't required at this scale.
+* Concurrency is not handled and the design has been kept to avoid the need of it.
 * Unit test cases absent as the main application has tested everything in its main method only.
 
 ## How to run and execute the App

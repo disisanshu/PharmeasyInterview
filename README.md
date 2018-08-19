@@ -37,7 +37,8 @@ Classes implemented on **_Business_**
 * Medical Lab
 * Pharmaceutical
 ```
-Business is currently not being used as it wasn't in the scope of problem statement but has been included to accomodate further use cases.
+Business is currently not being used as it wasn't in the scope of problem statement but has been included to accommodate
+further use cases.
 
 Other data models:
 ```
@@ -63,7 +64,16 @@ To handle data in memory, separate managers has been written to edit and maintai
 
 * PermissionReuqestManager
 ```
-The Application is initialized with sample data containing 10 Patients, 5 Doctors and 3 Pharmacists to run and check mentioned functional requirements of the Application.
+The Application is initialized with sample data containing 10 Patients, 5 Doctors and 3 Pharmacists to run and check
+mentioned functional requirements of the Application.
+
+#### Trade offs and Bottlenecks in design
+
+All the data managers are singleton and there is only one reference to the instance which is kept in the scope of App
+class only. Only App class communicates with the data managers and that too separately. There is no communication
+between data managers. As a result of this, the need for handling concurrency explicitly can be avoided. Also, as the 
+data managers are not communicating explicitly, a part of data has been kept multiple times in HashMaps and HashSets to
+avoid the need of communication between managers. These decisions were taken considering the scope of the problem.
 
 ### Important Features
 

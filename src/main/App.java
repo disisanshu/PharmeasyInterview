@@ -6,6 +6,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * Application class
+ */
 public class App {
 
     private static PatientManager patientManager;
@@ -164,7 +167,13 @@ public class App {
         return permissionRequest;
     }
 
+    /**
+     * Main App method. It initializes app with sample data and tests several and multiple use cases which are
+     * supported in the App.
+     * @param args
+     */
     public static void main(String args[]) {
+        // initializing App with sample data
         initializeAppWithSampleData();
 
         Doctor doctor1 = doctorManager.getDoctorMap().get(10);
@@ -183,6 +192,7 @@ public class App {
         LabReport medicalReport4 = labReportManager.getLabReportMap().get(1);
         LabReport medicalReport5 = labReportManager.getLabReportMap().get(1);
 
+        // Execution of various test cases
         System.out.println("#Test1");
         if (checkPermissionForMedicalReport(medicalReport1, doctor1)) {
             System.out.println(doctor1.getName() + " has permissions for " + medicalReport1.getMedicalReportId());

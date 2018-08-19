@@ -65,12 +65,24 @@ To handle data in memory, separate managers has been written to edit and maintai
 ```
 The Application is initialized with sample data containing 10 Patients, 5 Doctors and 3 Pharmacists to run and check mentioned functional requirements of the Application.
 
+### Important Features
+
+* Data models has been designed to accommodate future scale.
+* Data Models are implemented on builder patterns.
+* Data Managers are singleton.
+
+
+#### Limitations & shortcomings
+
+* Concurrency is not handled as it wasn't required at this scale.
+* Unit test cases absent as the main application has tested everything in its main method only.
+
 ## How to run and execute the App
 
 ###### Prerequisite
 
 * Lombok (a Java library)
-* JDK
+* JDK7+
 
 ###### Command to execute the App
 

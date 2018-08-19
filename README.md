@@ -1,11 +1,11 @@
-#PharmEasy Interview Assignment
+# PharmEasy Interview Assignment
 
 * 3 types of Roles Patient, Doctor and Pharmacist.
 * The Patient has medical records/prescriptions.
 * Doctor & Pharmacist asks for a patient’s prescriptions & medical records, the patient has to approve it.
 * Patient’s data can be shared only if they approve it.
 
-#Solution
+# Solution
 
 The App is maintaining data in memory.
 
@@ -64,14 +64,14 @@ To handle data in memory, separate managers has been written to edit and maintai
 ```
 The Application is initialized with sample data containing 10 Patients, 5 Doctors and 3 Pharmacists to run and check mentioned functional requirements of the Application.
 
-##How to run and execute the App
+## How to run and execute the App
 
-######Prerequisite
+###### Prerequisite
 
 * Lombok (a Java library)
 * JDK
 
-######Command to execute the App
+###### Command to execute the App
 
 Download Lombok from `https://projectlombok.org/download` and save it to your Downloads folder
 

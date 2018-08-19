@@ -72,8 +72,8 @@ mentioned functional requirements of the Application.
 All the data managers are singleton and there is only one reference to the instance which is kept in the scope of App
 class only. Only App class communicates with the data managers and that too separately. There is no communication
 between data managers. As a result of this, the need for handling concurrency explicitly can be avoided. Also, as the 
-data managers are not communicating explicitly, a part of data has been kept multiple times in HashMaps and HashSets to
-avoid the need of communication between managers. These decisions were taken considering the scope of the problem.
+data managers are not communicating explicitly, a part of data has been kept at multiple places in HashMaps and HashSets
+to avoid the need of communication between managers. These decisions were taken considering the scope of the problem.
 
 ### Important Features
 
